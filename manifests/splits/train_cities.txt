@@ -1,0 +1,37 @@
+Ankara
+Antalya
+Balikesir
+Bari
+Bialystok
+Bologna
+Brescia
+Bursa
+Catania
+Erzurum
+Foggia
+Gdansk
+Gdynia
+Istanbul
+Konya
+Livorno
+Lublin
+Manisa
+Mardin
+Mersin
+Milan
+Modena
+Mugla
+Naples
+Opole
+Palermo
+Plock
+Poznan
+Radom
+Reggio Calabria
+Sakarya
+Trabzon
+Trieste
+Turin
+Warsaw
+Wroclaw
+Zielona Gora

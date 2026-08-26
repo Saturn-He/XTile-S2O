@@ -1,0 +1,23 @@
+# XTile-S2O release archives — SHA-256 checksums
+#
+# Verify archives downloaded from the Zenodo record:
+#     sha256sum -c SHA256SUMS.txt          # Linux / macOS / Git Bash
+#     certutil -hashfile <file> SHA256     # Windows cmd, compare by eye
+#
+# Then reassemble each component:
+#     cat xtile_s2o_<name>.tar.part* > xtile_s2o_<name>.tar
+#     tar xf xtile_s2o_<name>.tar
+#
+# Component sizes (decimal GB): corpus76 13.0 (4 parts) · dem 4.7 (2)
+#                                fullscenes 5.1 (2)
+# Archive contents: corpus76 17,987 entries · dem 17,975 · fullscenes 155
+# Packed and verified 2026-08-25.
+
+eb9dd0dd8a949de86d9aed8908f0b92a51f8b79a3df32650da05ce95e82ce5c0  xtile_s2o_corpus76.tar.part00
+3ea9eb0705ec19205ad92ae273c8027815e0697a1fe65c6aa74dfbee294e46c8  xtile_s2o_corpus76.tar.part01
+84aa5f4f0dce3abcdb6b6271a7ebca7923f7e38f4cb8e06987b6d2ce769b90a3  xtile_s2o_corpus76.tar.part02
+0edb0e9260f6bb54f2f9137c0aab04c3780e473c622f0c73d2540e0ee408b8ec  xtile_s2o_corpus76.tar.part03
+1fdfafa0b512840a9730085413826db74631791431c446a8d03b00b7becd6f03  xtile_s2o_dem.tar.part00
+49fdaaabc369bd2d23d19b52085d58982788e0df17648a6cc0ed321197715918  xtile_s2o_dem.tar.part01
+87258fe82cfdbfd6dafa39ddc5bd0157c391baeaa505913ed00ca4de9df14707  xtile_s2o_fullscenes.tar.part00
+8515717c988f255bc49a9ad7125c5581e13ddc591fe25d4e84187e2db7a5c3c9  xtile_s2o_fullscenes.tar.part01

@@ -1,0 +1,37 @@
+# core (tested: Python 3.10, CUDA 12.1)
+torch==2.5.1
+torchvision==0.20.1
+numpy==1.26.4
+timm
+einops
+safetensors
+
+# geospatial / raster I/O
+rasterio
+tifffile
+imagecodecs
+shapely
+pyproj
+
+# metrics
+lpips
+piq
+pytorch-fid
+torch-fidelity @ git+https://github.com/LTH14/torch-fidelity.git@bfe72b995473e4fee9351705d7b005f17442a4ca   # JiT-upstream fork used by engine_jit/metrics
+scikit-image
+dtcwt
+scipy
+
+# priors and baselines
+transformers          # frozen DINOv3 teacher (training only)
+diffusers>=0.21.0     # latent-diffusion baselines
+accelerate
+
+# utilities
+opencv-python
+tensorboard
+pandas
+matplotlib
+tqdm
+Pillow
+requests

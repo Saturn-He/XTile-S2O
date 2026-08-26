@@ -1,0 +1,15 @@
+# Mechanical conda wrapper around requirements.txt (the authoritative dependency list).
+# Tested: Python 3.10, PyTorch 2.5.1, CUDA 12.1, NVIDIA A6000.
+name: xtile-s2o
+channels:
+  - pytorch
+  - nvidia
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pytorch=2.5.1
+  - torchvision=0.20.1
+  - pytorch-cuda=12.1
+  - pip:
+      - -r requirements.txt

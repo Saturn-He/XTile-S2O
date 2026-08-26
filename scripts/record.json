@@ -1,0 +1,39 @@
+{
+  "title": "XTile-S2O-Urban76: A 76-City Full-Scene Sentinel-1/Sentinel-2 Translation Corpus",
+  "version": "1.0",
+  "doi": "10.5281/zenodo.22082922",
+  "landing_page": "https://doi.org/10.5281/zenodo.22082922",
+  "access": "Record metadata is public; file access is restricted during peer review and will be made public upon acceptance of the manuscript.",
+  "license": "Multiple -- see DATA_LICENSES.md and docs/DATASET.md",
+  "components": {
+    "corpus76": {
+      "description": "76-city Sentinel-1/2 tiles (SAR_tif + Optical_tif) with manifests, train/val/test",
+      "archive": "xtile_s2o_corpus76.tar",
+      "size_bytes": 12985620480,
+      "parts": [
+        {"filename": "xtile_s2o_corpus76.tar.part00", "url": "https://zenodo.org/records/22082922/files/xtile_s2o_corpus76.tar.part00?download=1", "size_bytes": 4194304000, "sha256": "eb9dd0dd8a949de86d9aed8908f0b92a51f8b79a3df32650da05ce95e82ce5c0"},
+        {"filename": "xtile_s2o_corpus76.tar.part01", "url": "https://zenodo.org/records/22082922/files/xtile_s2o_corpus76.tar.part01?download=1", "size_bytes": 4194304000, "sha256": "3ea9eb0705ec19205ad92ae273c8027815e0697a1fe65c6aa74dfbee294e46c8"},
+        {"filename": "xtile_s2o_corpus76.tar.part02", "url": "https://zenodo.org/records/22082922/files/xtile_s2o_corpus76.tar.part02?download=1", "size_bytes": 4194304000, "sha256": "84aa5f4f0dce3abcdb6b6271a7ebca7923f7e38f4cb8e06987b6d2ce769b90a3"},
+        {"filename": "xtile_s2o_corpus76.tar.part03", "url": "https://zenodo.org/records/22082922/files/xtile_s2o_corpus76.tar.part03?download=1", "size_bytes": 402708480, "sha256": "0edb0e9260f6bb54f2f9137c0aab04c3780e473c622f0c73d2540e0ee408b8ec"}
+      ]
+    },
+    "dem": {
+      "description": "Per-tile Copernicus GLO-30 elevation and slope rasters, pixel-aligned to the Sentinel grid",
+      "archive": "xtile_s2o_dem.tar",
+      "size_bytes": 4678184960,
+      "parts": [
+        {"filename": "xtile_s2o_dem.tar.part00", "url": "https://zenodo.org/records/22082922/files/xtile_s2o_dem.tar.part00?download=1", "size_bytes": 4194304000, "sha256": "1fdfafa0b512840a9730085413826db74631791431c446a8d03b00b7becd6f03"},
+        {"filename": "xtile_s2o_dem.tar.part01", "url": "https://zenodo.org/records/22082922/files/xtile_s2o_dem.tar.part01?download=1", "size_bytes": 483880960, "sha256": "49fdaaabc369bd2d23d19b52085d58982788e0df17648a6cc0ed321197715918"}
+      ]
+    },
+    "fullscenes": {
+      "description": "76 co-gridded city-level Sentinel-1/Sentinel-2 mosaics with the source-product table",
+      "archive": "xtile_s2o_fullscenes.tar",
+      "size_bytes": 5135411200,
+      "parts": [
+        {"filename": "xtile_s2o_fullscenes.tar.part00", "url": "https://zenodo.org/records/22082922/files/xtile_s2o_fullscenes.tar.part00?download=1", "size_bytes": 4194304000, "sha256": "87258fe82cfdbfd6dafa39ddc5bd0157c391baeaa505913ed00ca4de9df14707"},
+        {"filename": "xtile_s2o_fullscenes.tar.part01", "url": "https://zenodo.org/records/22082922/files/xtile_s2o_fullscenes.tar.part01?download=1", "size_bytes": 941107200, "sha256": "8515717c988f255bc49a9ad7125c5581e13ddc591fe25d4e84187e2db7a5c3c9"}
+      ]
+    }
+  }
+}

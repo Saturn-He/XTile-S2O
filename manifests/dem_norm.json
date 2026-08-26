@@ -1,0 +1,9 @@
+{
+ "elev_lo": 0.0,
+ "elev_hi": 1632.935791015625,
+ "slope_lo": 0.0,
+ "slope_hi": 32.57417678833008,
+ "note": "train-split p1/p99, ALL tiles, stride-8 subsample, isfinite-filtered; linear map to [-1,1], clip outside",
+ "n_dem_tiles": 6224,
+ "n_slope_tiles": 6224
+}

@@ -1,0 +1,64 @@
+cff-version: 1.2.0
+message: "If you use this code or the XTile-S2O-Urban76 dataset, please cite the paper below."
+title: "XTile-S2O: Cross-Tile Coherent Full-Scene SAR-to-Optical Image Translation"
+type: software
+authors:
+  - given-names: Jingfei
+    family-names: He
+    affiliation: "Beijing Institute of Technology"
+    orcid: "https://orcid.org/0009-0001-8551-9631"
+  - given-names: Hao
+    family-names: Shi
+    affiliation: "Beijing Institute of Technology"
+    orcid: "https://orcid.org/0000-0002-2013-6592"
+  - given-names: Yuhang
+    family-names: Chen
+    affiliation: "Beijing Institute of Technology"
+    orcid: "https://orcid.org/0009-0007-6468-2169"
+  - given-names: Yunzhuo
+    family-names: Zeng
+    affiliation: "Beijing Institute of Technology"
+    orcid: "https://orcid.org/0009-0001-1873-4745"
+  - given-names: Ruiqi
+    family-names: Shi
+    affiliation: "Beijing Institute of Technology"
+    orcid: "https://orcid.org/0009-0001-7845-1907"
+  - given-names: Liang
+    family-names: Chen
+    affiliation: "Beijing Institute of Technology"
+    orcid: "https://orcid.org/0000-0003-3273-5522"
+  - given-names: Paolo
+    family-names: Gamba
+    affiliation: "University of Pavia"
+    orcid: "https://orcid.org/0000-0002-9576-6337"
+repository-code: "https://github.com/Saturn-He/XTile-S2O"
+license: MIT
+version: "1.0.0"
+date-released: "2026-08-25"
+keywords:
+  - SAR-to-optical image translation
+  - cross-tile coherence
+  - full-scene generation
+  - Sentinel-1
+  - Sentinel-2
+preferred-citation:
+  type: article
+  title: "XTile-S2O: Cross-Tile Coherent Full-Scene SAR-to-Optical Image Translation"
+  authors:
+    - given-names: Jingfei
+      family-names: He
+    - given-names: Hao
+      family-names: Shi
+    - given-names: Yuhang
+      family-names: Chen
+    - given-names: Yunzhuo
+      family-names: Zeng
+    - given-names: Ruiqi
+      family-names: Shi
+    - given-names: Liang
+      family-names: Chen
+    - given-names: Paolo
+      family-names: Gamba
+  journal: "ISPRS Journal of Photogrammetry and Remote Sensing"
+  year: 2026
+  notes: "under review"

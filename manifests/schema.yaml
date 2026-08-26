@@ -1,0 +1,144 @@
+# XTile-S2O repository manifest schema — release v1.0
+# The Zenodo corpus archive is the authoritative dataset distribution. Its canonical
+# patch_index.csv, block_2x2_index.csv, and source_products.csv files are mirrored
+# byte-for-byte in this repository. Other entries below are repository-side companion
+# manifests used for code execution, audit, and paper reproduction.
+
+dataset_version: "1.0"
+notes: >
+  Version 1.0 corrects 11 tiles containing SAR NaN values, which are assigned to
+  the invalid class. Final counts are 6,179 fully valid blocks and 6,031
+  block-training-eligible blocks.
+
+tile_coarse_label:
+  description: >
+    Six-class quality and content annotation, one per tile. Produced by one annotator and
+    independently verified by a second; disagreements resolved by the verifier. A subsequent
+    automated check reassigned 11 tiles with SAR NaN pixels to class 0.
+  classes:
+    0: {name: invalid,          count: 930,   used: false, note: "unusable tile (no-data, corrupt or NaN pixels)"}
+    1: {name: snow,             count: 391,   used: false, note: "snow-covered surface"}
+    2: {name: non_built_up,     count: 383,   used: true,  note: "valid, no appreciable built-up area"}
+    3: {name: sparse_built_up,  count: 4925,  used: true,  note: "valid, sparse built-up area"}
+    4: {name: dense_built_up,   count: 2252,  used: true,  note: "valid, dense built-up area"}
+    5: {name: cloud,            count: 104,   used: false, note: "cloud contamination in the optical tile"}
+  usable_rule: "coarse_label in {2, 3, 4}  ->  7,559 of 8,984 tiles"
+  built_up_rule: "coarse_label in {3, 4}"
+
+files:
+
+  patch_index.csv:
+    rows: 8984
+    key: patch_id
+    description: One row per tile pair, with geometry, labels, paths, and source-mosaic names.
+    columns:
+      patch_id: "Unique tile id: <Country>_<City>_r<row>_c<col>_x<x0>_y<y0>_s<stride>"
+      split: "train | val | test (assigned per city, never per tile)"
+      country: "Italy | Poland | Turkiye"
+      city: "City name"
+      row: "Grid row index within the city mosaic"
+      col: "Grid column index within the city mosaic"
+      x0: "Pixel column origin of the tile in the city mosaic"
+      y0: "Pixel row origin of the tile in the city mosaic"
+      patch_size: "256 (pixels, 10 m GSD)"
+      stride: "160 (pixels) -> 96 px overlap between neighbours"
+      coarse_label: "0-5, see tile_coarse_label"
+      coarse_label_name: "Text form of coarse_label"
+      sar_path: "Relative path of the 2-band VV/VH GeoTIFF"
+      optical_path: "Relative path of the 3-band visible-reflectance GeoTIFF"
+      dem_path: "Relative path of the per-tile Copernicus GLO-30 elevation raster"
+      slope_path: "Relative path of the per-tile slope raster"
+      source_s1_mosaic: "Filename of the exported city-level Sentinel-1 mosaic"
+      source_s2_mosaic: "Filename of the exported city-level Sentinel-2 mosaic"
+
+  block_2x2_index.csv:
+    rows: 7553
+    key: block_id
+    description: >
+      One row per geometrically complete 2x2 block of adjacent tiles (fused extent
+      416x416 px). The flags are DERIVED from the four member tile labels and the spatial
+      relation - they are eligibility metadata, not a second round of manual annotation.
+    columns:
+      block_id: "<Country>_<City>_r<row>_c<col>_2x2, anchored at the top-left member"
+      split: "Inherited from the city"
+      top_left_row: "Grid row of the top-left member"
+      top_left_col: "Grid column of the top-left member"
+      "{top_left,top_right,bottom_left,bottom_right}_patch_id": "Member tile ids"
+      "{...}_coarse_label": "Member tile labels"
+      n_valid: "Number of members with coarse_label in {2,3,4} (0-4)"
+      n_built: "Number of members with coarse_label in {3,4} (0-4)"
+      all_four_valid: "n_valid == 4                                  -> 6,179 blocks"
+      has_built_up: "n_built >= 1                                    -> 6,398 blocks"
+      use_for_block_training: "all_four_valid AND has_built_up       -> 6,031 blocks"
+      is_tiling_anchor: "Top-left member has even row and column     -> 2,059 blocks"
+      use_for_tiling_eval: "is_tiling_anchor AND all_four_valid      -> 1,684 blocks (1,166 train / 254 val / 264 test)"
+    evaluation_note: >
+      use_for_tiling_eval defines the disjoint-cover subset on which pre-fusion overlap
+      inconsistency and the seam decomposition are computed; the paper's frozen disjoint
+      sets are exactly its val subset (254 blocks, 1,016 tiles; recomposition-rule
+      selection) and test subset (264 blocks, 1,056 tiles; OI and the factorial study).
+      Note the rule does NOT include has_built_up: one val block
+      (Italy_Venice_r006_c010_2x2, four usable tiles, none built-up) is in the frozen
+      254 but would be dropped by a has_built_up filter.
+
+  city_index.csv:
+    rows: 76
+    key: [country, city]
+    description: Per-city summary — tile and block counts plus the source pair.
+    columns:
+      patches: "Tiles cropped from this city"
+      complete_blocks: "Geometrically complete 2x2 blocks"
+      all_valid: "Blocks whose four members are all valid"
+      usable_train: "Blocks eligible for block-level training"
+      s1_product_id: "See source_products.csv"
+      s2_product_id: "See source_products.csv"
+      pair_gap_days: "S1-S2 interval for this city"
+      s2_roi_cloud_fraction: "Cloud fraction over the ROI, from S2 cloud probability"
+      roi_area_km2: "Area of the built-up ROI"
+
+  source_products.csv:
+    rows: 76
+    key: [country, city]
+    description: Canonical source-product record for each city pair.
+    columns:
+      country: "Italy | Poland | Turkiye"
+      city: "City name"
+      s1_scene_file: "Filename of the delivered Sentinel-1 city mosaic"
+      s2_scene_file: "Filename of the delivered Sentinel-2 city mosaic"
+      s1_datetime_utc: "Sentinel-1 acquisition timestamp (UTC)"
+      s2_datetime_utc: "Sentinel-2 acquisition timestamp (UTC)"
+      pair_gap_days: "Absolute S1-S2 acquisition interval in days"
+      orbit: "DESCENDING for the whole corpus"
+      polarizations: "VV+VH for the whole corpus"
+      s1_product_id: "ESA Sentinel-1 product identifier of the source scene"
+      s2_product_id: "Sentinel-2 asset identifier of the source scene"
+
+  city_dem_stats.csv:
+    rows: 76
+    description: >
+      Per-city terrain description computed on the DEDUPLICATED city extent (tiles pasted
+      onto the city canvas by pixel origin, so 96-px overlaps are counted once).
+    columns:
+      elev_p5_m / elev_p50_m / elev_p95_m: "Elevation percentiles (m)"
+      relief_p95_p5_m: "P95 - P5 elevation, the relief measure used for terrain strata"
+      elev_min_m / elev_max_m: "Elevation range (m)"
+      slope_p50_deg / slope_p95_deg: "Slope percentiles (degrees)"
+      valid_fraction: "Fraction of the city canvas covered by valid DEM pixels"
+
+acquisition_protocol:
+  gee_collections:
+    sentinel1: "COPERNICUS/S1_GRD, instrumentMode=IW, resolution_meters=10, VV+VH, descending"
+    sentinel2: "COPERNICUS/S2_SR_HARMONIZED (Level-2A surface reflectance)"
+    cloud: "COPERNICUS/S2_CLOUD_PROBABILITY (per-pixel ROI cloud fraction)"
+    landcover: "ESA/WorldCover/v100 (built-up ROI extraction)"
+  roi: "Main built-up polygon within 30 km of the city centroid, buffered by 1,280 m, bounding box"
+  pair_constraints:
+    max_scene_cloud_percentage: 30
+    max_roi_cloud_fraction: 0.15
+    max_pair_gap_days: 7          # relaxed for 15 cities; see realised_pair_gap
+  realised_pair_gap: >
+    median 2.50 d, mean 10.94 d, max 65.79 d; 52 of 76 pairs within 7 d, 23 of them same-day.
+    The 7-day constraint was relaxed in a later selection round for 15 cities where no
+    sufficiently cloud-free optical scene existed inside the window (median 20.2 d for those).
+  tiling: "256 px, stride 160 (96 px overlap); stride 192 was the evaluated alternative"
+  splits: "City-disjoint, country-stratified: 37 train / 20 val / 19 test cities"

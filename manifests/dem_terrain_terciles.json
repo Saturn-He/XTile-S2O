@@ -1,0 +1,49 @@
+{
+ "rule": "terrain_relief = P95-P5 over the DEDUPLICATED city-level DEM mosaic cropped to the union of the city tile bounds (native GLO-30 grid; NOT the overlapping patch stack); ranked desc; top third mountainous, bottom third flat, middle excluded from the subgroup contrast",
+ "relief_by_city": {
+  "Turkiye_Malatya": 748.0640258789062,
+  "Italy_Genoa": 598.327880859375,
+  "Turkiye_Hatay": 433.9549255371094,
+  "Turkiye_Sanliurfa": 301.1256408691406,
+  "Italy_Salerno": 293.7197265625,
+  "Turkiye_Adana": 290.28216552734375,
+  "Turkiye_Gaziantep": 215.09381103515625,
+  "Turkiye_Diyarbakir": 184.86920166015625,
+  "Poland_Kielce": 94.12435913085938,
+  "Italy_Verona": 83.22696685791016,
+  "Poland_Rzeszow": 75.05987548828125,
+  "Italy_Rimini": 72.0087661743164,
+  "Italy_Reggio_Emilia": 56.72763442993164,
+  "Italy_Parma": 56.217994689941406,
+  "Poland_Gliwice": 51.58888244628906,
+  "Poland_Rybnik": 50.80792236328125,
+  "Poland_Bytom": 32.920135498046875,
+  "Italy_Padua": 11.356962203979492,
+  "Italy_Ravenna": 7.014045715332031
+ },
+ "mountainous": [
+  "Turkiye_Malatya",
+  "Italy_Genoa",
+  "Turkiye_Hatay",
+  "Turkiye_Sanliurfa",
+  "Italy_Salerno",
+  "Turkiye_Adana"
+ ],
+ "flat": [
+  "Italy_Parma",
+  "Poland_Gliwice",
+  "Poland_Rybnik",
+  "Poland_Bytom",
+  "Italy_Padua",
+  "Italy_Ravenna"
+ ],
+ "middle_excluded": [
+  "Turkiye_Gaziantep",
+  "Turkiye_Diyarbakir",
+  "Poland_Kielce",
+  "Italy_Verona",
+  "Poland_Rzeszow",
+  "Italy_Rimini",
+  "Italy_Reggio_Emilia"
+ ]
+}

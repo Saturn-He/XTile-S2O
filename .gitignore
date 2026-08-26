@@ -1,0 +1,31 @@
+# data and weights live in the archived record, never in git
+data/
+weights/
+*.pth
+*.ckpt
+*.safetensors
+*.tif
+*.tiff
+*.npy
+*.npz
+
+# outputs
+out/
+runs/
+results/
+eval/
+*.log
+
+# python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+env/
+
+# os / editor
+.DS_Store
+Thumbs.db
+@eaDir/
+.vscode/
+.idea/

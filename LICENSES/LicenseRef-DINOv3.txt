@@ -1,0 +1,14 @@
+DINOv3 License Reference
+
+XTile-S2O uses the gated Meta model
+facebook/dinov3-vitb16-pretrain-lvd1689m as a frozen training-time teacher. This repository
+does not redistribute DINOv3 code or weights. Users must obtain access from the official model
+repository and accept the terms presented there before downloading the model.
+
+Official model and licence sources:
+  https://huggingface.co/facebook/dinov3-vitb16-pretrain-lvd1689m
+  https://huggingface.co/facebook/dinov3-vitb16-pretrain-lvd1689m/blob/main/LICENSE.md
+
+The DINOv3 teacher is not used during XTile-S2O inference and is not embedded in the released
+student code or any future student checkpoint. The exact Hub revision used for the reported
+training run was not logged; only the model identifier above was retained.
