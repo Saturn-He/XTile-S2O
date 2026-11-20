@@ -9,7 +9,7 @@ the *ISPRS Journal of Photogrammetry and Remote Sensing*.
 
 ---
 
-## Overview
+## 🔍 Overview
 
 **XTile-S2O translates SAR scenes into coherent optical-like mosaics by sharing context across neighboring tiles.** Cross-patch attention (CPA) exchanges features within each 2 x 2 tile group, while geometry-matched block-reassembly and pre-fusion overlap losses supervise cross-tile consistency.
 
@@ -51,7 +51,7 @@ canonical manifest files inside the Zenodo corpus archive.
 
 ---
 
-## Headline results
+## 📊 Headline results
 
 Full-scene coherence on the XTile-S2O-Urban76 corpus (Table 5 of the paper; fixed-support OI
 (`OI_fixed`) on 264 disjoint
@@ -71,7 +71,7 @@ Supplementary Note S9). See the paper for the complete fidelity and coherence pr
 
 ---
 
-## Visual results
+## 🖼️ Visual results
 
 Selected figures from the manuscript illustrate full-scene translation and behavior at tile boundaries. Click a preview to open its original PDF. Aggregate results and evaluation conditions are reported above and in the manuscript.
 
@@ -95,7 +95,7 @@ Identical windows are compared across methods. Yellow triangles mark vertical ow
 
 ---
 
-## Installation
+## 🛠️ Installation
 
 ```bash
 git clone https://github.com/Saturn-He/XTile-S2O.git
@@ -106,7 +106,7 @@ conda activate xtile-s2o
 
 Tested with Python 3.10, PyTorch 2.5.1 (CUDA 12.1), on NVIDIA A6000 (48 GB).
 
-## Data
+## 🗂️ Data
 
 The archived **XTile-S2O-Urban76** record contains the following components (split `tar` archives, parts up to 4.2 GB):
 
@@ -138,7 +138,7 @@ cd ..
 python scripts/verify_data.py --target ./data
 ```
 
-## Quickstart
+## 🚀 Quickstart
 
 Run the paper's frozen disjoint test-block protocol with a trained checkpoint (see the
 training recipe below). The checkpoint loader accepts either a checkpoint file or a run
@@ -178,7 +178,7 @@ scripts/          data download, scene-cover construction, and verification
 docs/             dataset card, reproduction guide, model card, third-party notices
 ```
 
-## Citation
+## 📖 Citation
 
 ```bibtex
 @unpublished{he2026xtiles2o,
