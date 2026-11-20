@@ -9,6 +9,16 @@ the *ISPRS Journal of Photogrammetry and Remote Sensing*.
 
 ---
 
+## Overview
+
+**XTile-S2O translates SAR scenes into coherent optical-like mosaics by sharing context across neighboring tiles.** Cross-patch attention (CPA) exchanges features within each 2 x 2 tile group, while geometry-matched block-reassembly and pre-fusion overlap losses supervise cross-tile consistency.
+
+[![XTile-S2O framework: cross-tile feature exchange, consistency training, and full-scene inference](assets/figures/overview.png)](assets/figures/overview.pdf)
+
+**Framework overview.** Four neighboring tiles are processed jointly by a shared flow-matching transformer. CPA remains active during training and inference; DINOv3 alignment is used only during training. Primary full-scene inference uses ownership-based recomposition without blending. [Original PDF](assets/figures/overview.pdf).
+
+---
+
 ## What this repository provides
 
 | Component | Location | Notes |
@@ -58,6 +68,30 @@ and SSIM (0.399) among the evaluated methods. The fixed-band reference OI level 
 which arises entirely from clamped edge pairs; on strictly nominal-stride pairs the
 reference OI is exactly 0 (see `evaluation/oi_support_sensitivity.py` and the paper's
 Supplementary Note S9). See the paper for the complete fidelity and coherence protocol.
+
+---
+
+## Visual results
+
+Selected figures from the manuscript illustrate full-scene translation and behavior at tile boundaries. Click a preview to open its original PDF. Aggregate results and evaluation conditions are reported above and in the manuscript.
+
+<details>
+<summary><strong>Full-scene comparison across six test cities</strong></summary>
+
+[![Full-scene SAR-to-optical comparison across six test cities](assets/figures/full-scene-comparison.png)](assets/figures/full-scene-comparison.pdf)
+
+All methods use a common ownership-based hard-stitching rule and the same per-city optical display stretch. XTile-S2O uses 2 x 2 block context; the comparison methods translate tiles independently. Hatching marks reference regions excluded from paired fidelity evaluation. The checkerboard in the Bai et al. column is model output, not a mask. [Original PDF](assets/figures/full-scene-comparison.pdf).
+
+</details>
+
+<details>
+<summary><strong>Seam close-ups and cross-tile consistency</strong></summary>
+
+[![Seam close-ups comparing baselines, the prior-strengthened base, block consistency, and XTile-S2O](assets/figures/seam-closeups.png)](assets/figures/seam-closeups.pdf)
+
+Identical windows are compared across methods. Yellow triangles mark vertical ownership transitions; side carets mark horizontal transitions. These examples illustrate boundary behavior, while the full-scene statistics support aggregate conclusions. [Original PDF](assets/figures/seam-closeups.pdf).
+
+</details>
 
 ---
 
