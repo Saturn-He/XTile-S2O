@@ -205,3 +205,10 @@ training run was not logged.
 Data products carry component-specific terms and required attributions. See
 [DATA_LICENSES.md](DATA_LICENSES.md) and [docs/DATASET.md](docs/DATASET.md) before
 redistributing anything obtained here.
+
+## 🔗 Related Projects
+
+Explore our related work on SAR-to-optical image translation:
+
+- **[DOGAN](https://github.com/Saturn-He/DOGAN)** — DINO-based optical-prior-driven GAN for SAR-to-optical image translation.
+- **[ColorS2O](https://github.com/Saturn-He/ColorS2O)** — Controllable SAR-to-optical image translation with sparse colour anchors.
