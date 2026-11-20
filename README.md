@@ -222,8 +222,6 @@ Explore our related work on optical priors, colour control, and cross-tile consi
 
 DOGAN brings pretrained optical representations into GAN-based SAR-to-optical translation. A frozen DINO backbone, stacked optical-aware adapters, and multiscale domain alignment guide the generator during training. At inference, only the trained generator is needed to translate SAR images into optical-like images.
 
-[Explore DOGAN →](https://github.com/Saturn-He/DOGAN)
-
 ### [ColorS2O](https://github.com/Saturn-He/ColorS2O)
 
 **Controllable SAR-to-Optical Image Translation with Sparse Colour Anchors**
@@ -235,5 +233,3 @@ DOGAN brings pretrained optical representations into GAN-based SAR-to-optical tr
 </p>
 
 ColorS2O uses sparse colour anchors from an optical observation to guide the colours of SAR-to-optical translation. Mask-Guided Sparse Embedding (MGSE) encodes these anchors, and gated cross-attention injects them into the transformer. A time-epoch curriculum coordinates chromatic and perceptual supervision; the repository includes anchor sampling, training, and inference.
-
-[Explore ColorS2O →](https://github.com/Saturn-He/ColorS2O)
