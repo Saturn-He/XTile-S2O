@@ -208,7 +208,32 @@ redistributing anything obtained here.
 
 ## 🔗 Related Projects
 
-Explore our related work on SAR-to-optical image translation:
+Explore our related work on optical priors, colour control, and cross-tile consistency in SAR-to-optical image translation. Click an overview to view the full-size figure.
 
-- **[DOGAN](https://github.com/Saturn-He/DOGAN)** — DINO-based optical-prior-driven GAN for SAR-to-optical image translation.
-- **[ColorS2O](https://github.com/Saturn-He/ColorS2O)** — Controllable SAR-to-optical image translation with sparse colour anchors.
+### [DOGAN](https://github.com/Saturn-He/DOGAN)
+
+**DINO-Based Optical-Prior-Driven GAN for SAR-to-Optical Image Translation**
+
+<p>
+  <a href="https://github.com/Saturn-He/DOGAN/blob/main/assets/Overview_1.png">
+    <img src="https://raw.githubusercontent.com/Saturn-He/DOGAN/main/assets/Overview_1.png" width="360" alt="DOGAN framework overview">
+  </a>
+</p>
+
+DOGAN brings pretrained optical representations into GAN-based SAR-to-optical translation. A frozen DINO backbone, stacked optical-aware adapters, and multiscale domain alignment guide the generator during training. At inference, only the trained generator is needed to translate SAR images into optical-like images.
+
+[Explore DOGAN →](https://github.com/Saturn-He/DOGAN)
+
+### [ColorS2O](https://github.com/Saturn-He/ColorS2O)
+
+**Controllable SAR-to-Optical Image Translation with Sparse Colour Anchors**
+
+<p>
+  <a href="https://github.com/Saturn-He/ColorS2O/blob/main/assets/framework.png">
+    <img src="https://raw.githubusercontent.com/Saturn-He/ColorS2O/main/assets/framework.png" width="360" alt="ColorS2O framework overview">
+  </a>
+</p>
+
+ColorS2O uses sparse colour anchors from an optical observation to guide the colours of SAR-to-optical translation. Mask-Guided Sparse Embedding (MGSE) encodes these anchors, and gated cross-attention injects them into the transformer. A time-epoch curriculum coordinates chromatic and perceptual supervision; the repository includes anchor sampling, training, and inference.
+
+[Explore ColorS2O →](https://github.com/Saturn-He/ColorS2O)
