@@ -206,7 +206,7 @@ Data products carry component-specific terms and required attributions. See
 [DATA_LICENSES.md](DATA_LICENSES.md) and [docs/DATASET.md](docs/DATASET.md) before
 redistributing anything obtained here.
 
-## 🔗 Related Projects
+## 🔗 Our Related Projects
 
 Explore our related work on optical priors, colour control, and cross-tile consistency in SAR-to-optical image translation. Click an overview to view the full-size figure.
 
