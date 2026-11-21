@@ -233,3 +233,9 @@ DOGAN brings pretrained optical representations into GAN-based SAR-to-optical tr
 </p>
 
 ColorS2O uses sparse colour anchors from an optical observation to guide the colours of SAR-to-optical translation. Mask-Guided Sparse Embedding (MGSE) encodes these anchors, and gated cross-attention injects them into the transformer. A time-epoch curriculum coordinates chromatic and perceptual supervision; the repository includes anchor sampling, training, and inference.
+
+### [SADBM](https://github.com/AproZC/SADBM)
+
+**Structure-Aware Diffusion Bridge Model for SAR-to-Optical Image Translation**
+
+SADBM uses an edge-enhanced SAR image as the starting point of a diffusion bridge to preserve scene structure in SAR-to-optical image translation.
