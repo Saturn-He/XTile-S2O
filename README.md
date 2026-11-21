@@ -220,7 +220,7 @@ Explore our related work on optical priors, colour control, and cross-tile consi
   </a>
 </p>
 
-DOGAN uses optical priors from a pretrained DINO model to guide GAN-based SAR-to-optical image translation.
+DOGAN uses optical priors from a pretrained DINO model to guide GAN-based SAR-to-optical image translation. ([IEEE TGRS, 2025](https://doi.org/10.1109/TGRS.2025.3606979))
 
 ### [ColorS2O](https://github.com/Saturn-He/ColorS2O)
 
