@@ -2,10 +2,9 @@
 
 **Cross-Tile Coherent Full-Scene SAR-to-Optical Image Translation**
 
-Official code and dataset manifests for the accompanying manuscript currently under review at
-the *ISPRS Journal of Photogrammetry and Remote Sensing*.
+Official code and dataset manifests for the accompanying manuscript, currently under review.
 
-> Paper: *submitted to the ISPRS Journal of Photogrammetry and Remote Sensing (DOI to follow)* · Archived data release: [10.5281/zenodo.22082922](https://doi.org/10.5281/zenodo.22082922) *(files restricted during peer review)*
+> Paper: *under review (DOI to follow)* · Archived data release: [10.5281/zenodo.22082922](https://doi.org/10.5281/zenodo.22082922) *(files restricted during peer review)*
 
 ---
 
@@ -186,13 +185,14 @@ docs/             dataset card, reproduction guide, model card, third-party noti
   author = {He, Jingfei and Shi, Hao and Chen, Yuhang and Zeng, Yunzhuo and Shi, Ruiqi
             and Chen, Liang and Gamba, Paolo},
   year   = {2026},
-  note   = {Manuscript under review at the ISPRS Journal of Photogrammetry and Remote Sensing}
+  note   = {Manuscript under review}
 }
 ```
 
 ## License and attribution
 
-Our code is released under the MIT License (see `LICENSE`). It builds on the JiT reference
+Our code is released under the MIT License (see `LICENSE`), which covers the original
+contributions of the XTile-S2O authors; see `NOTICE` for its scope. It builds on the JiT reference
 implementation (MIT, © 2025 Tianhong Li); `docs/THIRD_PARTY.md` lists every upstream
 component and its terms.
 

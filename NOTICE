@@ -1,0 +1,7 @@
+XTile-S2O
+Copyright (c) 2026 XTile-S2O authors
+
+This repository contains code derived from third-party projects that remain under
+their own licenses, and it references data products with their own terms of use.
+See docs/THIRD_PARTY.md and docs/DATASET.md. The MIT License in LICENSE covers only
+the original contributions of the XTile-S2O authors.

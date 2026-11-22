@@ -42,7 +42,7 @@ keywords:
   - Sentinel-1
   - Sentinel-2
 preferred-citation:
-  type: article
+  type: unpublished
   title: "XTile-S2O: Cross-Tile Coherent Full-Scene SAR-to-Optical Image Translation"
   authors:
     - given-names: Jingfei
@@ -59,6 +59,5 @@ preferred-citation:
       family-names: Chen
     - given-names: Paolo
       family-names: Gamba
-  journal: "ISPRS Journal of Photogrammetry and Remote Sensing"
   year: 2026
   notes: "under review"
